@@ -159,7 +159,6 @@ var reverse = function(string) {
   var newString = strArray.join('');
 
   return result + reverse(newString);
-
 };
 
 // 10. Write a function that determines if a string is a palindrome.
@@ -197,6 +196,27 @@ var gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  var result = false;
+
+  if (!str1.length && !str2.length) {
+    result = true;
+    return result;
+  }
+
+  var str1Arr = str1.split('');
+  var str2Arr = str2.split('');
+
+  var letter1 = str1Arr.shift();
+  var letter2 = str2Arr.shift();
+
+  if (letter1 !== letter2) {
+    return result;
+  }
+
+  var newStr1 = str1Arr.join('');
+  var newStr2 = str2Arr.join('');
+
+  return compareStr(newStr1, newStr2);
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
