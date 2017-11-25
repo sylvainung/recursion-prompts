@@ -163,6 +163,7 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -269,6 +270,23 @@ var buildList = function(value, length) {
 // For numbers which are multiples of both three and five, output “FizzBuzz” instead of the number.
 // fizzBuzz(5) // ['1','2','Fizz','4','Buzz']
 var fizzBuzz = function(n) {
+  var result = [];
+
+  if (n === 0) {
+    return result;
+  }
+
+  if ((n % 3 === 0) && (n % 5 === 0)) {
+    result.push('FizzBuzz');
+  } else if (n % 3 === 0) {
+    result.push('Fizz');
+  } else if (n % 5 === 0) {
+    result.push('Buzz');
+  } else {
+    result.push(n.toString());
+  }
+
+  return (fizzBuzz(n - 1)).concat(result);
 };
 
 // 20. Count the occurence of a value in a list.
